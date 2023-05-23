@@ -1,0 +1,79 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/deliveryapp_test
+    username: postgres
+    password: 2002
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+jwt:
+  access:
+    key: heruighurighviey84y57yuvhrjhvrhtvrhtvhjr8u4v8njvertvn8ut8veu834uvndjkwe
+    expiration-time: 7200000000
+  refresh:
+    key: evjrkhertvuheruth84y574y587yvbrhvjrtvhrjthv3u4895vuntervnjtkejrht89545y
+    expiration-time: 604800000
+
+
+# AWS S3 credentials
+
+cloud:
+  aws:
+    credentials:
+      access_key: AKIAU5RMQJADOUFAXWSK
+      secret_key: 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
+    region:
+      static: us-east-2
+    stack:
+      auto: false
+    s3:
+      base_url: https://birzumdaphotosbucket.s3.us-east-2.amazonaws.com/
+
+
+app:
+  simulation: true
+  admin:
+    firstName: "MuhammadQodir"
+    lastName: "Yusupov"
+    phoneNumber: "+998931668648"
+    password: "123"
+  role:
+    admin:
+      name: "ADMIN"
+      description: "System administrator"
+    manager:
+      name: "MANAGER"
+      description: "System Manager"
+    client:
+      name: "CLIENT"
+      description: "System client"
+  sms:
+    sender-email: "yusupovforwin@gmail.com"
+    sender-password: "Zy8QqFHSece407D1oe9cacBIOSpVWl3tF47TMMnF"
+    valid_till: 15
+    valid_till_in: "MINUTES"
+  images:
+    institutions:
+      root:
+        path: "testing/uploads/institutions/"
+    products:
+      root:
+        path: "testing/uploads/products/"
